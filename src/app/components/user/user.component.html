@@ -1,0 +1,42 @@
+<!-- this is interpolation {{name}}
+<h1>Hello {{name}} you have {{stock}} stocks</h1>
+
+# this is prperty binding as disabled is a html attribute or property 
+<button [disabled]="isBtnDisabled">click</button>
+
+# event binding(such as onChange here (change) or (input)) and two way data binding 
+<h1>the input value is {{inVal}}</h1>
+<input type="text" [value]="inVal" (input)="onChange($event)">
+
+# short code for two way data binding called banana in the box.
+# ngModel comes from FormModel that has to be imported
+ <input type="text" [(ngModel)]="inVal">
+
+# directive is like a class that is used to change the element behaviour
+# control flow syntax of for/if avilable for angular 17 
+ <div>
+    @for (e of employ; track e.name) {
+        @if(e.age > 23){
+            <h1>Hello {{e.name}} age is {{e.age}} and status {{e.isSingle?"single":"married"}} </h1>
+        }@else {
+            <h1>Hello {{e.name}} age is under 22 and status {{e.isSingle?"single":"married"}}</h1>
+        }
+        
+    }
+ </div>
+<hr>
+# directive syntax of for/if for and if are structral directives there is other type of directive that is attribute directive like ngModel
+ <div *ngFor="let e of employ">
+
+    <h1 *ngIf="e.age > 23; else elseBlock">Hello {{e.name}} age is {{e.age}} and status {{e.isSingle?"single":"married"}} </h1>
+    <ng-template #elseBlock>
+        <h1>Hello {{e.name}} age is under 22 and status {{e.isSingle?"single":"married"}}</h1>
+    </ng-template>    
+ </div> -->
+
+
+
+ <h1>Hello {{name | uppercase}} status {{isSingle}} salary {{salary | currency:"INR"}} Phone {{phoneNumber | countryCode}}</h1>
+ <button appHighlight (click)="sendData()">help</button>
+
+
